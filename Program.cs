@@ -47,7 +47,6 @@ namespace g1hgm_bot
 
             client.StartReceiving();
             client.OnMessage += OnMessegeHandler;
-            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("[Log]: Bot started");
             Console.ReadLine();
             client.StopReceiving();
@@ -58,9 +57,7 @@ namespace g1hgm_bot
             var message = e.Message;
             if(message.Text != null)
             {
-                Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write($"[Log]: От: {message.From.FirstName} {message.From.LastName}: {message.Text} - ");
-                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine($"<{DateTime.Now}>");
 
                 Random rnd = new Random();
